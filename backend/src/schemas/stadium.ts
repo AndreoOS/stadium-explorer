@@ -12,6 +12,6 @@ const stadiumSchema = new Schema<IStadium>({
     location: {type: String, required: true},
 })
 
-const StadiumModel = model<IStadium>('User', stadiumSchema);
+const StadiumModel = model<IStadium>('Match', stadiumSchema);
 
 export default StadiumModel;
