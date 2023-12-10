@@ -1,7 +1,7 @@
 # ISI - stadium explorer
 
 ## About
-- This repository contains a project for visualizing all of the Champions League Final Stadiums in an ArcGIS mao
+- This repository contains a project for visualizing all of the Champions League Final Stadiums in an ArcGIS map
 - It has been created using `npm create vite@latest`
 
 ## How to run
