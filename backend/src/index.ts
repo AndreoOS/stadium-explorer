@@ -1,7 +1,9 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
-
+// import mongoose from "mongoose";
+import cors from "cors";
+import userRoutes from "./routes/user";
+const mongoose = require('mongoose');
 dotenv.config();
 
 const app: Express = express();
@@ -12,11 +14,14 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB");
   })
-  .catch((err) => {
-    console.log(err);
+  .catch((err: Error) => { 
+    console.log(process.env.MONGO_URI)
+    console.log('nu merge' + err);
   });
 
-app.use(cors())
+app.use(express.json());
+app.use(cors());
+app.use("/user", userRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");

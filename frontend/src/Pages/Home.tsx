@@ -5,6 +5,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import "./Home.css"
 import AppNavBar from "../Components/Navbar";
+import { onLogin } from "../Api/AuthApi";
 
 
 const Home = () => {
@@ -18,7 +19,13 @@ const Home = () => {
         };
         const username = target.username.value;
         const password = target.password.value;
-        console.log("FORM DATA", username, password);
+        onLogin(username, password)
+            .then((res) => {
+                console.log("Logged in");
+            })
+            .catch((err: Error) => {
+                alert(`ERROR ${err.message}`);
+            })
         setLoginOpen(false);
     }
 
