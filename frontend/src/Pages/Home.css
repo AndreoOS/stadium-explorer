@@ -1,0 +1,10 @@
+.homeBackground {
+    background-image: url("../assets/stadium_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+
+.homeBackgroundLayer {
+    background-color: rgb(0,0,0, 0.6);
+}

@@ -16,6 +16,7 @@ mongoose
     console.log(err);
   });
 
+app.use(cors())
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
