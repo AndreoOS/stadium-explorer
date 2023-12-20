@@ -5,15 +5,13 @@ interface IUser extends Document {
     email: string;
     password: string;
     role: string;
-    valid: boolean;
 }
 
 const userSchema = new Schema<IUser>({
     username: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
-    role: {type: String, default: "basic"},
-    valid: {type: Boolean, default: false}
+    role: {type: String, default: "basic"}
 })
 
 const UserModel = model<IUser>('User', userSchema);

@@ -4,9 +4,10 @@ import logo from "../assets/StadiumExplorerLOGO.jpg"
 
 type Props = {
     setLoginOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    setRegisterOpen: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-const AppNavBar = ({setLoginOpen}: Props) => {
+const AppNavBar = ({setLoginOpen, setRegisterOpen}: Props) => {
     return (
         <Navbar expand="lg" className="appNavbar fixed-top">
             <NavbarBrand href="/">
@@ -24,6 +25,11 @@ const AppNavBar = ({setLoginOpen}: Props) => {
                         setLoginOpen(true);
                     }}>
                         Log In
+                    </Nav.Link>
+                    <Nav.Link onClick={() => {
+                        setRegisterOpen(true);
+                    }}>
+                        Register
                     </Nav.Link>
                 </Nav>
             </NavbarCollapse>

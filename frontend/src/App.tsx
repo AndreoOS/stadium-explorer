@@ -6,6 +6,7 @@ const queryClient = new QueryClient()
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
+import Login from './Pages/Login'
 
 function App() {
   window.history.scrollRestoration = 'manual'
@@ -16,6 +17,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='*' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/dashboard'/>
         </Routes>
       </QueryClientProvider>
     </>

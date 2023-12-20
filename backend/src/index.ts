@@ -1,9 +1,8 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-// import mongoose from "mongoose";
+import mongoose from "mongoose";
 import cors from "cors";
 import userRoutes from "./routes/user";
-const mongoose = require('mongoose');
 dotenv.config();
 
 const app: Express = express();
@@ -16,7 +15,7 @@ mongoose
   })
   .catch((err: Error) => { 
     console.log(process.env.MONGO_URI)
-    console.log('nu merge' + err);
+    console.log(err);
   });
 
 app.use(express.json());
